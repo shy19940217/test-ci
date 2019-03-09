@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-itunes-app" content="app-id=425349261">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum=1,minimum=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="referrer" content="no-referrer">
+    <title>力马出发</title>
+    <script>
+        function getQueryString(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) return unescape(r[2]);
+          return null;
+        }
+        function isWeiXin() {
+          var ua = window.navigator.userAgent.toLowerCase();
+          if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        var code = getQueryString("code")
+    
+        if (code == undefined && window.location.port === ""&&isWeiXin()) {
+          //alert("没有code跳转")
+          var appid = {
+            'jilindev.lishicloud.com': 'wxa61705ab8dd81841',
+            'jilintest.lishicloud.com':'wx1f2bd62c43986ed0',
+            'www.j-travel365.com':'wx6c4fe1e85f15d85e',
+            'jzymt.j-travel365.com':'wx0e519dc17b268a96'
+          }
+          var host = window.location.host
+          var code = appid[host]
+          var hash = window.location.hash.replace(/\//g, "%2F").replace(/#/g, "%23")
+          var url=encodeURIComponent(window.location.href)
+          //let host =window.location.host
+          // window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + code +
+          //   "&redirect_uri=http%3A%2F%2F" + host + "%2FweChat%2Findex.html" + hash +
+          //   "&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
+          window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + code +
+            "&redirect_uri="+url+"&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
+        }
+    
+      </script>
+      <script src="./static/jweixin-1.2.0.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
