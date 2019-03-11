@@ -52,7 +52,7 @@
       />
     </van-dialog>
     </div>
-    <van-popup v-model="show" position="bottom" :overlay="false" >
+    <van-popup v-model="show" position="bottom" :overlay="true" >
        <van-picker
         show-toolbar
         title=""
@@ -126,14 +126,6 @@ export default {
   }
 }
 </script>
-<style>
-  .van-picker__toolbar{
-    height: 100px;
-    line-height: 100px;
-    font-size: 28px;
-  }
-
-</style>
 <style lang='scss' scoped>
    .setting{
        position: fixed;
