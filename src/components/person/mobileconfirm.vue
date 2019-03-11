@@ -56,40 +56,40 @@ export default {
      right: 0;
      background: #FAFAFA;
      .mobileimage{
-       margin-top: 92px;
+       margin-top: 46px;
        text-align: center;
        img{
-         width: 144px;
-         height: 144px;
+         width: 72px;
+         height: 72px;
        }
      }
      .desc1{
 
-       margin-top: 52px;
-       font-size: 32px;
+       margin-top: 26px;
+       font-size: 16px;
        color: #3C3C3E;
        text-align: center;
      }
      .desc2{
-      margin-top: 20px;
-      font-size: 24px;
+      margin-top: 10px;
+      font-size: 12px;
       color: #A5A5A8;
       text-align: center;
      }
      .btn_rol{
-       margin-top: 80px;
+       margin-top: 40px;
        text-align: center;
        .btn{
          display: inline-block;
          background-image: linear-gradient(-135deg, #FF0014 0%, #FC4C13 47%, #FF7900 100%);
-         box-shadow: 0 6px 15px 0 rgba(255,0,16,0.30);
-         font-size: 32px;
+         box-shadow: 0 3px 8px 0 rgba(255,0,16,0.30);
+         font-size: 16px;
          color: #FFFFFF;
          text-align: center;
-         width: 630px;
-         height: 100px;
-         line-height: 100px;
-         border-radius: 50px;
+         width: 315px;
+         height: 50px;
+         line-height: 50px;
+         border-radius: 25px;
        }
      }
    }

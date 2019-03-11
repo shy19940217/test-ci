@@ -50,7 +50,7 @@
         v-model="nickname"
         placeholder="请输入昵称"
       />
-     </van-dialog>
+    </van-dialog>
     </div>
     <van-popup v-model="show" position="bottom" :overlay="false" >
        <van-picker
@@ -81,7 +81,7 @@ export default {
     }
   },
   created () {
-    this.$toast('提示文案')
+    // this.$toast('提示文案')
   },
   computed: {},
   watch: {},
@@ -144,45 +144,45 @@ export default {
        background: rgb(250,250,250);
      .tabcolumn{
        background: #ffffff;
-       height: 120px;
+       height: 60px;
        display: flex;
        flex-direction: row;
        align-items: center;
        justify-content: space-between;
-       border-top: 2px solid #F6F6F6;
+       border-top: 1px solid #F6F6F6;
        .tabcolumn_fl{
            display: flex;
            flex-direction: row;
            align-items: center;
-           margin-left: 32px;
+           margin-left: 16px;
            span{
-             margin-left: 10px;
-             font-size: 32px;
+             margin-left: 5px;
+             font-size: 16px;
              color: #393939;
            }
        }
        .tabcolumn_fr{
-          margin-right: 68px;
+          margin-right: 34px;
           display: flex;
           flex-direction: row;
           align-items: center;
           .headimage{
-               width: 96px;
-               height: 96px;
+               width: 48px;
+               height: 48px;
                border-radius: 50%;
            }
            .jinatou{
-               margin-left: 20px;
-               width: 12px;
+               margin-left: 10px;
+               width: 6px;
            }
        }
        .tabcolumn_fr1{
-          margin-right: 35px;
+          margin-right: 17px;
        }
     }
     .tabcolumn1{
         background: #ffffff;
-        height: 150px;
+        height: 75px;
     }
    }
 </style>

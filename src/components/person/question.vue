@@ -53,14 +53,17 @@ export default {
     //    line-height: 108px;
    }
    .van-collapse-item__title{
-      height: 108px;
-      line-height: 108px;
+      // height: 54px;
+      // line-height: 54px;
+   }
+   .van-cell__title{
+      vertical-align: middle;
    }
    .van-cell__right-icon{
        position: absolute;
        top: 50%;
        transform: translateY(-50%);
-       right: 20px;
+       right: 10px;
    }
 </style>
 <style lang='scss' scoped>

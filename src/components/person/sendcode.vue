@@ -54,21 +54,21 @@ export default {
 </script>
 <style>
     .van-button{
-        height: 100px;
+        height: 50px;
         background: white;
-        font-size: 32px;
+        font-size: 16px;
         color: #FF0014;
     }
     .van-field__label{
-        font-size: 32px;
+        font-size: 16px;
         color: #3C3C3E;
-        max-width: 170px;
+        max-width: 85px;
     }
    .van-cell-group{
        background: #FAFAFA;
    }
    .van-field__body input{
-       height: 40px;
+       height: 20px;
    }
 </style>
 <style lang='scss' scoped>
@@ -80,32 +80,32 @@ export default {
        left: 0;
        background: #FAFAFA;
        .username, .sms{
-           border: 2px solid #D3D1D1;
-           border-radius: 6px;
+           border: 1px solid #D3D1D1;
+           border-radius: 3px;
            display: flex;
            flex-direction: row;
            align-items: center;
            background: #ffffff;
-           margin: 40px auto 0;
-           width: 670px;
-           height: 105px;
-           padding: 11px 15px;
-           margin-top: 15px;
+           margin: 20px auto 0;
+           width: 335px;
+           height: 52px;
+           padding: 5px 8px;
+           margin-top: 8px;
        }
       .btn_rol{
-       margin-top: 80px;
+       margin-top: 40px;
        text-align: center;
        .btn{
          display: inline-block;
          background-image: linear-gradient(-135deg, #FF0014 0%, #FC4C13 47%, #FF7900 100%);
-         box-shadow: 0 6px 15px 0 rgba(255,0,16,0.30);
-         font-size: 32px;
+         box-shadow: 0 3px 8px 0 rgba(255,0,16,0.30);
+         font-size: 16px;
          color: #FFFFFF;
          text-align: center;
-         width: 630px;
-         height: 100px;
-         line-height: 100px;
-         border-radius: 50px;
+         width: 315px;
+         height: 50px;
+         line-height: 50px;
+         border-radius: 25px;
        }
      }
    }

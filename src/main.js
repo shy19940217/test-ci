@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ajax from './js/Ajax/index.js'
+import store from './store'
 import base from './js/base.config'
 import attachFastClick from 'fastclick'
 // import ajax1 from './js/Ajax/ajax.js'
@@ -55,6 +56,7 @@ attachFastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

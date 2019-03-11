@@ -193,15 +193,15 @@ export default {
     // background-color: #f9f9f9;
     overflow: hidden;
   .swiper-container {
-    width: 750px;
+    width: 375px;
   }
   .swiper-container .swiper-wrapper {
     .swiper-slide{
-      height:403px;
-      width: 750px;
+      height:201px;
+      width: 375px;
       img{
         height: 100%;
-        width: 750px;
+        width: 375px;
       }
     }
   }
@@ -212,7 +212,7 @@ export default {
      background: #FFFFFF;
   }
   .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
-    bottom: 50px;
+    bottom: 25px;
   }
  }
  .homecontent{
@@ -220,105 +220,105 @@ export default {
      .brand{
        z-index: 1000;
        position: relative;
-       width: 690px;
-       padding: 20px 0;
+       width: 345px;
+       padding: 10px 0;
       //  height: 345px;
       //  top: -40px;
       //  left: 50%;
       //  transform: translateX(-50%);
-       margin: -40px auto 0;
+       margin: -20px auto 0;
        background: #FFFFFF;
-       box-shadow: 0 2px 30px 0 rgba(205,170,173,0.30);
-       border-radius: 6px;
+       box-shadow: 0 1px 15px 0 rgba(205,170,173,0.30);
+       border-radius: 3px;
        .title{
         //  padding-top: 20px;
          display:flex;
          flex-direction: row;
          align-items: center;
-         padding-left: 80px;
+         padding-left: 40px;
          .col-fl{
            background-image: linear-gradient(-135deg, #FF6C33 0%, #FC4C13 47%, #FF0014 100%);
-           box-shadow: 0 2px 15px 0 rgba(255,0,16,0.70);
-           border-radius: 24px;
-           width: 120px;
-           height: 120px;
+           box-shadow: 0 1px 8px 0 rgba(255,0,16,0.70);
+           border-radius: 12px;
+           width: 60px;
+           height: 60px;
           }
           .col-fr{
-            margin-left: 30px;
+            margin-left: 15px;
             p{
               text-align: left;
               &:nth-of-type(1){
                 font-family: PingFang-SC-Medium;
-                font-size: 34px;
+                font-size: 17px;
                 color: #3C3C3E;
 
               }
               &:nth-of-type(2){
-                margin-top: 10px;
-                font-size: 26px;
+                margin-top: 5px;
+                font-size: 13px;
                 color: #A5A5A8;
               }
             }
           }
         }
         .desc{
-          text-indent: 50px;
-          font-size: 24px;
+          text-indent: 25px;
+          font-size: 12px;
           color: #A5A5A8;
-          margin: 35px 0 0 0;
-          padding: 0 30px;
+          margin: 17px 0 0 0;
+          padding: 0 15px;
           text-align: justify;
-          line-height: 40px;
+          line-height: 20px;
         }
      }
      .reservation{
-       margin-top: 40px;
+       margin-top: 20px;
        .title{
-         padding-left: 30px;
-         margin-bottom: 22px;
+         padding-left: 15px;
+         margin-bottom: 11px;
          font-family: PingFang-SC-Medium;
-         font-size: 32px;
+         font-size: 16px;
          color: #3C3C3E;
        }
        .list{
-         height: 150px;
-         border: 2px solid #F6F6F6;
+         height: 75px;
+         border: 1px solid #F6F6F6;
          display: flex;
          flex-direction: row;
          align-items: center;
         //  margin: 25px 0;
          justify-content: space-between;
-         padding: 0 30px;
+         padding: 0 15px;
 
          .reservation_col_fl{
            display: flex;
            flex-direction: row;
            align-items: center;
             .photo{
-              width: 100px;
-              height: 100px;
+              width: 50px;
+              height: 50px;
               border-radius: 50%;
             }
             .desc{
-              margin-left: 20px;
+              margin-left: 10px;
               .desc_first_rol{
                 font-family: PingFang-SC-Medium;
-                font-size: 26px;
+                font-size: 13px;
                 color: #3C3C3E;
               }
               .desc_second_rol{
                 align-items: center;
-                margin-top: 8px;
+                margin-top: 4px;
                 display: flex;
                 flex-direction: row;
                 .location{
                   display: flex;
                   flex-direction: row;
                   align-items: center;
-                  margin-right: 30px;
+                  margin-right:15px;
                 }
                 span{
-                  font-size: 24px;
+                  font-size: 12px;
                   color: #A5A5A8;
                 }
               }
@@ -327,48 +327,48 @@ export default {
          }
          .reservation_col_fr{
             font-family: PingFangSC-Regular;
-            font-size: 24px;
+            font-size: 12px;
             color: #3C3C3E;
          }
 
        }
      }
      .shop{
-        margin-top: 40px;
+        margin-top: 20px;
        .title{
-         padding-left: 30px;
-         margin-bottom: 22px;
+         padding-left: 15px;
+         margin-bottom: 11px;
          font-family: PingFang-SC-Medium;
-         font-size: 32px;
+         font-size: 16px;
          color: #3C3C3E;
        }
        .list{
-          height: 180px;
-          border: 2px solid #F6F6F6;
+          height: 90px;
+          border: 1px solid #F6F6F6;
           display: flex;
           flex-direction: row;
           align-items: center;
           //  margin: 25px 0;
           // justify-content: space-between;
-          padding: 0 30px;
+          padding: 0 15px;
           .photo{
-            width: 120px;
-            height: 120px;
+            width: 60px;
+            height: 60px;
           }
           .desc{
-            margin-left: 20px;
+            margin-left: 10px;
             .desc_first_rol{
-              font-size: 26px;
+              font-size: 13px;
               color: #3C3C3E;
-              margin-bottom: 12px;
+              margin-bottom: 6px;
             }
             .desc_second_rol{
-              font-size: 24px;
+              font-size: 12px;
               color: #A5A5A8;
-              margin-bottom: 12px;
+              margin-bottom: 6px;
             }
             .desc_third_rol{
-              font-size: 24px;
+              font-size: 12px;
               color: #A5A5A8;
             }
           }
@@ -379,13 +379,13 @@ export default {
        justify-content: center;
        align-items: center;
        width: 100%;
-       height: 120px;
-       font-size: 20px;
+       height: 60px;
+       font-size: 10px;
        color: #A5A5A8;
        letter-spacing: 0;
        img{
          display: inline-block;
-         margin-right: 7px;
+         margin-right: 3px;
        }
      }
 

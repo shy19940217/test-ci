@@ -103,28 +103,28 @@ export default {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width:150px;
-            height:200px;
+            width:75px;
+            height:100px;
             // padding: 0 40px;
             // border: 1px solid black;
 
             .date{
-                width:120px;
-                font-size: 24px;
+                width:60px;
+                font-size: 12px;
                 color: #A5A5A8;
                 text-align: center;
-                margin-bottom: 8px;
+                margin-bottom: 4px;
             }
             .week{
-                width:120px;
-                font-size: 32px;
+                width:60px;
+                font-size: 16px;
                 color: #A5A5A8;
                 text-align: center;
-                margin-bottom: 8px;
+                margin-bottom: 4px;
             }
             .lesson{
-                 width:120px;
-                font-size: 24px;
+                 width:60px;
+                font-size: 12px;
                 color: #A5A5A8;
                 text-align: center;
             }
@@ -134,25 +134,25 @@ export default {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 150px;
-            height:200px;
+            width: 75px;
+            height:100px;
             .date{
-                width: 120px;
-                font-size: 24px;
+                width: 60px;
+                font-size: 12px;
                 color: #FF0014;
                 text-align: center;
-                margin-bottom: 8px;
+                margin-bottom: 4px;
             }
             .week{
-                width:120px;
-                font-size: 32px;
+                width:60px;
+                font-size: 16px;
                 color: #FF0014;
                 text-align: center;
-                margin-bottom: 8px;
+                margin-bottom: 4px;
             }
             .lesson{
-                width:120px;
-                font-size: 24px;
+                width:60px;
+                font-size: 12px;
                 color: #FF0014;
                 text-align: center;
             }

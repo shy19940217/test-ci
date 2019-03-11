@@ -1,13 +1,6 @@
 <template>
-  <div class='banlance'>
-     <div class="headertitle">
-       <h1 class="desc1">
-          810.00
-       </h1>
-       <h2 class="desc2">账户余额（元）</h2>
-     </div>
-     <div class="banlancelist">
-       <van-pull-refresh v-model="isLoading" @refresh="onRefresh" >
+  <div class='record'>
+      <van-pull-refresh v-model="isLoading" @refresh="onRefresh" >
          <van-list
           v-model="loading"
           :immediate-check="false"
@@ -18,10 +11,10 @@
         <div class="banlancelist_item" v-for="(item,index) in list" :key="index">
           <div class="banlancelist_item_fl">
             <p>{{item.title}}</p>
-            <p>{{item.location}}</p>
+            <p>{{item.time}}</p>
           </div>
           <div class="banlancelist_item_fr">
-            <p>{{item.time}}</p>
+            <!-- <p>{{item.time}}</p> -->
             <p v-bind:class="item.flag ==1 ? 'add':'reduce'">
               <span v-if="item.flag ==0">-</span>
               <span v-if="item.flag ==1">+</span>
@@ -31,8 +24,6 @@
         </div>
         </van-list>
         </van-pull-refresh>
-
-     </div>
   </div>
 </template>
 
@@ -111,9 +102,7 @@ export default {
       ]
     }
   },
-  created () {
-    // this.finished = false
-  },
+  created () {},
   computed: {},
   watch: {},
   mounted () {},
@@ -151,51 +140,9 @@ export default {
   }
 }
 </script>
-<style>
- .van-pull-refresh{
-   min-height: 100%;
-   /* overflow-y: scroll;
-   -webkit-overflow-scrolling: touch;  */
- }
-</style>
+
 <style lang='scss' scoped>
-   .banlance{
-     position: fixed;
-     top: 0;
-     bottom: 0;
-     left: 0;
-     right: 0;
-     background: white;
-     .headertitle{
-       position: absolute;
-       top:0;
-       left: 0;
-       text-align: center;
-       height: 137px;
-       width: 100%;
-       border: 1px solid transparent;
-       background-image: linear-gradient(-135deg, #FF0014 0%, #FC4C13 47%, #FF7900 100%);
-       .desc1{
-          margin-top: 35px;
-          font-family: PingFangSC-Semibold;
-          font-size: 30px;
-          color: #FFFFFF;
-       }
-       .desc2{
-         font-size: 14px;
-         color: #FFFFFF;
-         margin-top: 5px;
-       }
-     }
-     .banlancelist{
-       position: absolute;
-       top: 137px;
-       bottom: 0;
-       left: 0;
-       right: 0;
-       overflow-y: scroll;
-       -webkit-overflow-scrolling: touch;
-       .banlancelist_item{
+   .banlancelist_item{
          border-bottom: 1px solid #F6F6F6;
          width: 345px;
          margin: 0 auto;
@@ -221,14 +168,6 @@ export default {
          }
           .banlancelist_item_fr{
            text-align: right;
-           p{
-             &:nth-of-type(1){
-               font-size: 13px;
-               color: #A5A5A8;
-               margin-bottom: 8px;
-             }
-           }
-         }
          .add{
            font-family: PingFangSC-Semibold;
            font-size: 16px;
@@ -239,7 +178,6 @@ export default {
            font-size: 16px;
            color: #FF7900;
          }
+         }
        }
-     }
-   }
 </style>

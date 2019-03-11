@@ -54,5 +54,41 @@ export default [
       title: '余额'
     },
     component: resolve => require(['@/components/person/banlance'], resolve)
+  },
+  {
+    path: '/integration',
+    name: '',
+    meta: {
+      title: '积分'
+    },
+    component: resolve => require(['@/components/person/integration'], resolve),
+    children: [
+      {
+        path: '/integration/task',
+        name: '积分任务',
+        component: resolve => require(['@/components/person/integration_task'], resolve)
+      },
+      {
+        path: '/integration/record',
+        name: '积分记录',
+        component: resolve => require(['@/components/person/integration_record'], resolve)
+      }
+    ]
+  },
+  {
+    path: '/exchange',
+    name: '',
+    meta: {
+      title: '积分兑换'
+    },
+    component: resolve => require(['@/components/person/exchange'], resolve)
+  },
+  {
+    path: '/coupon',
+    name: '',
+    meta: {
+      title: '优惠券'
+    },
+    component: resolve => require(['@/components/person/coupon'], resolve)
   }
 ]

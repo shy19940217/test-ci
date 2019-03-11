@@ -132,7 +132,7 @@ table {
     top: 0px;
     left: 0px;
     z-index: 999;
-    width: 750px;
+    width: 375px;
     display: none;
   }
   .progress.active {
@@ -221,7 +221,7 @@ table {
 #app {
   width: 100%;
   min-height: 100%;
-  padding-bottom:111px;
+  padding-bottom:55px;
   /* overflow-x: hidden; */
   font-family: '微软雅黑', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -249,7 +249,7 @@ body{
 
 <style lang="scss" scoped>
 .app{
-  max-width:750px;margin:0px auto;position: relative;
+  max-width:375px;margin:0px auto;position: relative;
 }
 
 </style>

@@ -68,42 +68,42 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 690px;
-    height: 226px;
-    margin: 0 auto 80px;
+    width: 345px;
+    height: 113px;
+    margin: 0 auto 40px;
     background: #FFFFFF;
-    box-shadow: 0 4px 20px 0 rgba(205,170,173,0.20);
-    border-radius: 6px;
+    box-shadow: 0 2px 10px 0 rgba(205,170,173,0.20);
+    border-radius: 3px;
     .beautifylist_col_fl{
-        margin-left: 30px;
+        margin-left: 15px;
         display: flex;
         flex-direction: row;
         align-items: center;
       .photo{
-          width: 140px;
-          height: 130px;
+          width: 70px;
+          height: 65px;
       }
       .content{
-          margin-left: 30px;
+          margin-left: 15px;
           .title{
-              font-size: 32px;
+              font-size: 16px;
               color: #3C3C3E;
-              margin-bottom: 15px;
+              margin-bottom: 8px;
           }
           .desc{
-              font-size: 24px;
+              font-size: 12px;
               color: #A5A5A8;
-              margin-bottom: 15px;
+              margin-bottom: 8px;
           }
           .money{
              font-family: PingFangSC-Semibold;
-             font-size: 32px;
+             font-size: 16px;
              color: #FF7900;
           }
       }
     }
     .beautifylist_col_fr{
-        margin-right: 30px;
+        margin-right: 15px;
     }
 
   }

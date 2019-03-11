@@ -99,7 +99,9 @@ export default {
         2: '/question',
         3: '',
         4: '',
-        5: '/banlance'
+        5: '/banlance',
+        6: '/integration/task',
+        7: '/coupon'
       }
       this.$router.push({
         path: obj[index]
@@ -115,32 +117,32 @@ export default {
 <style lang='scss' scoped>
    .person{
      .person_info_first{
-       padding: 50px 0;
+       padding: 25px 0;
        display: flex;
        flex-direction: row;
       //  align-items: center;
        justify-content: space-between;
        .person_info_first_fl{
-         margin-left: 35px;
+         margin-left: 17px;
            display: flex;
            flex-direction: row;
            align-items: center;
            .photo{
              border-radius: 50%;
-             width: 130px;
-             height: 130px;
+             width: 70px;
+             height: 65px;
            }
            .desc{
-             margin-left: 30px;
+             margin-left: 15px;
              p{
                &:nth-of-type(1){
                  font-family: PingFangSC-Semibold;
-                 font-size: 34px;
+                 font-size: 17px;
                  color: #3C3C3E;
                }
                &:nth-of-type(2){
-                 margin-top: 15px;
-                 font-size: 29px;
+                 margin-top: 8px;
+                 font-size: 15px;
                  color: #A5A5A8;
                }
              }
@@ -148,9 +150,9 @@ export default {
            }
        }
        .person_info_first_fr{
-         margin-right: 60px;
+         margin-right: 30px;
          .icon{
-           width: 37px;
+           width: 18px;
          }
        }
 
@@ -159,49 +161,49 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         .person_info_second_item{
           text-align: center;
           flex: 1;
            p{
                &:nth-of-type(1){
                  font-family: PingFangSC-Semibold;
-                 font-size: 34px;
+                 font-size: 17px;
                  color: #3C3C3E;
                }
                &:nth-of-type(2){
-                 margin-top: 15px;
-                 font-size: 29px;
+                 margin-top: 8px;
+                 font-size: 14px;
                  color: #A5A5A8;
                }
              }
         }
     }
     .tabcolumn{
-       height: 120px;
+       height: 60px;
        display: flex;
        flex-direction: row;
        align-items: center;
        justify-content: space-between;
-       border-top: 2px solid #F6F6F6;
+       border-top: 1px solid #F6F6F6;
        .tabcolumn_fl{
            display: flex;
            flex-direction: row;
            align-items: center;
-           margin-left: 36px;
+           margin-left: 18px;
            img{
-             width: 26px;
+             width: 13px;
            }
            span{
-             margin-left: 10px;
-             font-size: 32px;
+             margin-left: 5px;
+             font-size: 16px;
              color: #393939;
            }
        }
        .tabcolumn_fr{
-          margin-right: 36px;
+          margin-right: 18px;
           img{
-            width: 12px;
+            width: 6px;
           }
        }
     }

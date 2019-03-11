@@ -84,48 +84,24 @@ export default {
     initRouter () {
       this.active = 0
       let path = this.tablist[0].linkurl
-      this.$router.push({
+      this.$router.replace({
         path: path
       })
     },
     checktab (item, index) {
       this.active = index
       sessionStorage.setItem('active', this.active)
-      this.$router.push({
+      this.$router.replace({
         path: item.linkurl
       })
     }
   }
 }
 </script>
-<style>
-   .van-tabs__wrap{
-       height: 90px;
-   }
-   .van-tabs, .van-tabs--line{
-     height: 60px !important;
-   }
-   .van-tabs--line .van-tabs__wrap{
-     height: 90px;
-   }
-   .van-tab, .van-tab--active{
-     /* padding: 29px 0 25px 0; */
-   }
-   .tab-title{
-     font-size: 32px !important;
-     padding: 29px 0 25px 0;
-   }
-   .van-tab--active{
-     color: #FF0014;
-   }
-   .van-ellipsis{
-     display: inline-block;
-     font-size: 32px;
-     text-align: center;
-   }
-</style>
+
 <style lang='scss' scoped>
     .course{
+           padding-bottom: 55px;
            position: fixed;
            top: 0;
            left: 0;
@@ -136,12 +112,12 @@ export default {
                position:absolute;
                top: 0;
                left: 0;
-               height: 100px;
+               height: 50px;
                width: 100%;
            }
            .content{
                position: absolute;
-               top: 100px;
+               top: 50px;
                bottom: 0;
                left: 0;
                right: 0;
@@ -157,14 +133,14 @@ export default {
      overflow-x: scroll;
      .tab{
        position: relative;
-       height: 45px;
-       min-width: 160px;
-       padding: 25px 0;
+       height: 23px;
+       min-width: 80px;
+       padding: 13px 0;
        flex: 1;
        display: flex;
        align-items: center;
        justify-content: center;
-       font-size: 32px;
+       font-size: 16px;
        color: #A5A5A8;
        text-align: center;
       //  .line{
@@ -179,14 +155,14 @@ export default {
       }
       .active{
           position: relative;
-          height: 45px;
-          min-width: 160px;
-          padding: 25px 0;
+          height: 23px;
+          min-width: 80px;
+          padding: 13px 0;
           flex: 1;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 32px;
+          font-size: 16px;
           color: #FF0014;
           text-align: center;
         // border: 1px solid #FF0014;
@@ -195,8 +171,8 @@ export default {
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: 80px;
-          height: 5px;
+          width: 40px;
+          height: 3px;
           background: #FF0014;
         }
       }

@@ -147,7 +147,7 @@ export default {
 }
 </script>
 <style>
-   .van-tabs__wrap{
+   /* .van-tabs__wrap{
        height: 90px;
    }
    .van-tabs, .van-tabs--line{
@@ -157,11 +157,8 @@ export default {
      height: 90px;
    }
    .van-tab, .van-tab--active{
-     /* padding: 29px 0 25px 0; */
    }
    .tab-title{
-     /* font-size: 28px !important;
-     color: #FF0014; */
      padding: 29px 0 25px 0;
    }
    .van-tab--active{
@@ -171,7 +168,7 @@ export default {
      display: inline-block;
      font-size: 32px;
      text-align: center;
-   }
+   } */
 
 </style>
 <style lang='scss' scoped>
@@ -186,12 +183,12 @@ export default {
                position:absolute;
                top: 0;
                left: 0;
-               height: 100px;
+               height: 50px;
                width: 100%;
            }
            .content{
                position: absolute;
-               top: 100px;
+               top: 50px;
                bottom: 0;
                left: 0;
                right: 0;
@@ -201,71 +198,71 @@ export default {
        }
       .list{
          position: relative;
-         width:690px;
-         height: 178px;
+         width:345px;
+         height: 89px;
          background: #FFFFFF;
-         box-shadow: 0 4px 20px 0 rgba(205,170,173,0.20);
-         border-radius: 6px;
+         box-shadow: 0 2px 10px 0 rgba(205,170,173,0.20);
+         border-radius: 3px;
          display: flex;
          flex-direction: row;
          align-items: center;
          justify-content: space-between;
 
-         margin: 30px auto 0;
+         margin: 15px auto 0;
 
          .reservation_col_fl{
-           margin-left: 30px;
+           margin-left: 15px;
            display: flex;
            flex-direction: row;
            align-items: center;
             .photo{
-              width: 126px;
-              height: 118px;
-              border-radius:5px;
+              width: 63px;
+              height: 59px;
+              border-radius:3px;
             }
             .desc{
-              margin-left: 20px;
+              margin-left: 10px;
               .desc_first_rol{
                 font-family: PingFang-SC-Medium;
-                font-size: 26px;
-                width: 234px;
+                font-size: 13px;
+                width: 117px;
                 overflow:hidden;
                 text-overflow:ellipsis;
                 white-space:nowrap;
                 color: #3C3C3E;
               }
               .desc_second_rol{
-                  margin-top: 10px;
+                  margin-top: 5px;
               }
               .location{
                   display: flex;
                   flex-direction: row;
                   align-items: center;
-                  margin-top: 10px;
-                  margin-right: 30px;
+                  margin-top: 5px;
+                  margin-right: 15px;
                }
                span{
-                  font-size: 24px;
+                  font-size: 12px;
                   color: #A5A5A8;
                }
 
             }
          }
          .reservation_col_fr{
-            margin-right: 30px;
+            margin-right: 15px;
             font-family: PingFangSC-Regular;
-            font-size: 24px;
+            font-size: 12px;
             color: #3C3C3E;
          }
          .label{
              position: absolute;
              top: 0;
-             right: 30px;
-             width: 120px;
-             height: 45px;
-             line-height: 45px;
+             right: 15px;
+             width: 60px;
+             height: 22px;
+             line-height: 22px;
              text-align: center;
-             font-size: 24px;
+             font-size: 12px;
          }
          .label1{
              background: #0065FF;

@@ -103,11 +103,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .bottom{
-  max-width: 750px;
-  height:111px;
+  max-width: 375px;
+  height:55px;
   position: fixed;
   background-color: #ffffff;
-  box-shadow: 0px 3px 20px 0px rgba(206, 206, 206, 0.35);
+  box-shadow: 0px 1px 10px 0px rgba(206, 206, 206, 0.35);
   bottom: 0;
   left: 0;
   right:0;
@@ -115,17 +115,17 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   .imgicon{
-    width:43px;
-    height:43px;
+    width:21px;
+    height:21px;
   }
   .name{
-    margin-top:3px;
-    font-size: 20px;
+    margin-top:1px;
+    font-size: 10px;
     color: #A5A5A8;
   }
   .active{
-    margin-top:3px;
-    font-size: 10px;
+    margin-top:1px;
+    font-size: 5px;
     color: #ff3170;
   }
 }
@@ -146,7 +146,7 @@ export default {
 // }
 .van-tabbar-item--active{
     color: #666666;
-    font-size: 10px;
+    font-size: 5px;
 }
 .van-tabbar{
 
