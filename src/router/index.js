@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import homerouter from './home'
 import courserouter from './course'
 import personrouter from './person'
+import loginrouter from './login'
 // Vue.use(Router)
 export default new Router({
   routes: [
@@ -16,7 +17,8 @@ export default new Router({
     },
     ...homerouter,
     ...courserouter,
-    ...personrouter
+    ...personrouter,
+    ...loginrouter
 
   ],
   scrollBehavior (to, from, savedPosition) {
