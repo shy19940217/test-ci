@@ -26,36 +26,36 @@
 <script>
 import { Toast } from 'vant'
 export default {
-  name:'login',
+  name: 'login',
   data () {
     return {
-      resData:{
-        name:'微信会员',
-        headImg:require('@/assets/logo.png'),
+      resData: {
+        name: '微信会员',
+        headImg: require('@/assets/logo.png')
       },
-      form:{
-        phone:'',
-        code:''
+      form: {
+        phone: '',
+        code: ''
       }
     }
   },
-  created(){},
+  created () {},
   computed: {
-    codeIcon(){
-      return this.form.code.length>0?require('@/assets/icon/code_checked.jpg'):require('@/assets/icon/code_unchecked.jpg')
+    codeIcon () {
+      return this.form.code.length > 0 ? require('@/assets/icon/code_checked.jpg') : require('@/assets/icon/code_unchecked.jpg')
     },
-    phoneIcon(){
-      return this.form.phone.length>0?require('@/assets/icon/phone_checked.jpg'):require('@/assets/icon/phone_unchecked.jpg')
+    phoneIcon () {
+      return this.form.phone.length > 0 ? require('@/assets/icon/phone_checked.jpg') : require('@/assets/icon/phone_unchecked.jpg')
     }
   },
   watch: {},
-  mounted(){},
+  mounted () {},
   methods: {
-    getCode(){
-      Toast('获取验证码成功');
+    getCode () {
+      Toast('获取验证码成功')
     },
-    onSubmit(){
-      Toast('提交跳转');
+    onSubmit () {
+      Toast('提交跳转')
     }
   },
   components: {
@@ -117,7 +117,7 @@ export default {
       .form-button{
         margin-top: 40px;
         background-image: linear-gradient(135deg, #FF7900 0%, #FC4C13 47%, #FF0014 100%);
-box-shadow: 0 6px 15px 0 rgba(255,0,16,0.30);
+        box-shadow: 0 6px 15px 0 rgba(255,0,16,0.30);
         border-radius: 25px;
         height: 50px;
         font-size: 16px;
