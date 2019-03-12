@@ -5,17 +5,19 @@
       <div><span>{{resData.name}}</span></div>
     </div>
     <div class="form">
-      <div class="form-item">
+      <div class="form-item" ref="phoneFocus">
         <img class="icon-left" :src="phoneIcon" alt="">
         <label for=""></label>
-        <input v-model="form.phone" type="text" placeholder="请输入您的手机号">
+        <input v-model="form.phone" type="text" placeholder="请输入您的手机号" @focus="handelFocus('phoneFocus')" @blur="handelBlur('phoneFocus')">
       </div>
-      <div class="form-item">
+      <div class="form-item" ref="codeFocus">
         <img class="icon-left" :src="codeIcon" alt="">
         <label for=""></label>
-        <input v-model="form.code" class="small-input" type="text" placeholder="请输入验证码">
+        <input v-model="form.code" class="small-input" type="text" placeholder="请输入验证码" @focus="handelFocus('codeFocus')"  @blur="handelBlur('codeFocus')">
         <div class="getCode" @click="getCode">
-          获取验证码</div>
+          <span class="red-code" v-if="!codeStatus">获取验证码</span>
+          <span class="second" v-if="codeStatus">{{timeNum}}s</span>
+          </div>
       </div>
       <div class="form-button">
         <button @click="onSubmit">确认绑定</button>
@@ -34,6 +36,8 @@ export default {
         name: '微信会员',
         headImg: require('@/assets/logo.png')
       },
+      codeStatus:false,
+      timeNum:60,
       form: {
         phone: '',
         code: ''
@@ -52,11 +56,38 @@ export default {
   watch: {},
   mounted () {},
   methods: {
+    // 获取焦点黑色线条
+    handelFocus(item){
+      this.$refs[item].style.borderBottomColor="#3C3C3E";
+    },
+    // 失去焦点灰色线条
+    handelBlur(item){
+      this.$refs[item].style.borderBottomColor="#D3D1D1";
+    },
     getCode () {
+      this.codeStatus=true;
+      this.timeInterval('60')
       Toast('获取验证码成功')
     },
     onSubmit () {
       Toast('提交跳转')
+    },
+    // 60s倒计时过后做..
+    doSomething(){
+      this.codeStatus=false;
+      return false;
+    },
+    // 倒计时
+    timeInterval(allTime){
+      let flag= 1;
+      let i = allTime;
+      setInterval(()=>{
+        i=i-1;
+        this.timeNum=i;
+        if(i==0){
+          this.doSomething();
+        }
+      },1000)
     }
   },
   components: {
@@ -118,8 +149,17 @@ export default {
           width: 100%;
           text-align: right;
           font-size: 16px;
-          color: #FF0014;
           letter-spacing: 0;
+          .red-code{
+            color: #FF0014;
+            display: inline-block;
+            width: 100%;
+          }
+          .second{
+            color: #A5A5A8;
+            display: inline-block;
+            width: 100%;
+          }
         }
       }
       .form-button{
