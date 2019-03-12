@@ -90,5 +90,13 @@ export default [
       title: '优惠券'
     },
     component: resolve => require(['@/components/person/coupon'], resolve)
+  },
+  {
+    path: '/invite',
+    name: '',
+    meta: {
+      title: '邀请有礼'
+    },
+    component: resolve => require(['@/components/person/invite'], resolve)
   }
 ]

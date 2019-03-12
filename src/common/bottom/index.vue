@@ -125,7 +125,7 @@ export default {
   }
   .active{
     margin-top:1px;
-    font-size: 5px;
+    font-size: 10px;
     color: #ff3170;
   }
 }
