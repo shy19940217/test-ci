@@ -35,6 +35,9 @@
         </div>
        </div>
      </div>
+     <!-- <div class="nodata">
+        <img class="img" src="@/assets/nodata.png">
+     </div> -->
 
   </div>
 </template>
@@ -166,6 +169,7 @@ export default {
                  .operate_col_fl{
                     display: flex;
                     flex-direction: row;
+                    align-items: center;
                  }
                  .operate_col_fr{
                       margin-right: 15px;
@@ -203,6 +207,17 @@ export default {
 
              }
            }
+       }
+       .nodata{
+         height: 100%;
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         .img{
+           width: 288px;
+           height: 166px;
+         }
        }
    }
 </style>

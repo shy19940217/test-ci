@@ -31,14 +31,14 @@
         <div class="title">
            <span>我的预约</span>
         </div>
-        <div class="list" v-for="(item,index) in reservationlist" :key="index">
+        <div class="list" v-for="(item,index) in reservationlist" :key="index" @click="godetail()">
            <div class="reservation_col_fl">
                <img class="photo" :src="item.imageUrl">
                <div class="desc">
                  <p class="desc_first_rol">{{item.title}}</p>
                  <div class="desc_second_rol">
                    <div class="location">
-                    <img style="width:18.7px;height:19px;margin-right:8px;" src="@/assets/location.png">
+                    <img style="width:11px;height:12px;margin-right:4px;" src="@/assets/icon/location.png">
                     <span>{{item.location}}</span>
                    </div>
                    <div v-if="item.category ==1">
@@ -70,7 +70,7 @@
                  <p class="desc_second_rol">{{item.address}}</p>
                  <p class="desc_third_rol">
                    <span>{{item.distance}}</span>
-                   <img style="width:22px;height:24px;" src="@/assets/location.png">
+                   <img style="width:11px;height:12px;" src="@/assets/icon/location.png">
                  </p>
                </div>
         </div>
@@ -143,6 +143,11 @@ export default {
     Swiper
   },
   methods: {
+    godetail () {
+      this.$router.push({
+        path: '/detail'
+      })
+    },
     gosearch (event) {
       if (event.keyCode === 13) {
         this.$router.push({
@@ -308,7 +313,7 @@ export default {
               }
               .desc_second_rol{
                 align-items: center;
-                margin-top: 4px;
+                margin-top: 8px;
                 display: flex;
                 flex-direction: row;
                 .location{

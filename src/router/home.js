@@ -8,5 +8,13 @@ export default [
       keepAlive: true,
       isBack: false
     }
+  },
+  {
+    path: '/detail',
+    name: '首页',
+    component: resolve => require(['@/components/home/detail'], resolve),
+    meta: {
+      title: '项目详情'
+    }
   }
 ]

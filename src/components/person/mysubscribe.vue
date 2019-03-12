@@ -28,7 +28,7 @@
                     <span>{{item.time}}</span>
                    </div>
                    <div class="location">
-                    <img style="width:18.7px;height:15px;margin-right:8px;" src="@/assets/location.png">
+                    <img style="width:11px;height:12px;margin-right:4px;" src="@/assets/icon/location.png">
                     <span>{{item.location}}</span>
                    </div>
                </div>

@@ -95,7 +95,7 @@ export default {
     gopage (index) {
       var obj = {
         0: '/mysubscribe',
-        1: '',
+        1: '/invite',
         2: '/question',
         3: '',
         4: '',

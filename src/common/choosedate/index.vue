@@ -1,11 +1,11 @@
 <template>
 <div>
     <div class="days">
-    <div @click="pick(day)" v-for="(day, index) in days" :key="index" :class="index==active ? 'checkedday':'day'">
-     <span class="date">{{ day | flitertime }}</span>
-     <span class="week">{{ day | filterweek }}</span>
-     <span class="lesson">3节课</span>
-    </div>
+      <div @click="pick(day,index)" v-for="(day, index) in days" :key="index" :class="index==active ? 'checkedday':'day'">
+      <span class="date">{{ day | flitertime }}</span>
+      <span class="week">{{ day | filterweek }}</span>
+      <span class="lesson">3节课</span>
+      </div>
     </div>
 </div>
 
@@ -57,6 +57,9 @@ export default {
   watch: {},
   mounted () {},
   methods: {
+    pick (day, index) {
+      this.active = index
+    },
     formatDate (year, month, day) {
       const y = year
       let m = month

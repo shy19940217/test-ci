@@ -9,9 +9,11 @@ import base from './js/base.config'
 import attachFastClick from 'fastclick'
 // import ajax1 from './js/Ajax/ajax.js'
 import 'lib-flexible/flexible'
+import toastRegistry from '@/common/toast/index'
 import { Toast } from 'vant'
 
 Vue.use(Toast)
+Vue.use(toastRegistry)
 // import 'font-awesome/css/font-awesome.css'
 // import GlobalUI from './common/index.js'
 // import store from './store/index.js'
