@@ -16,7 +16,7 @@
         <input v-model="form.code" class="small-input" type="text" placeholder="请输入验证码" @focus="handelFocus('codeFocus')"  @blur="handelBlur('codeFocus')">
         <div class="getCode" @click="getCode">
           <span class="red-code" v-if="!codeStatus">获取验证码</span>
-          <span class="second" v-if="codeStatus">60s</span>
+          <span class="second" v-if="codeStatus">{{timeNum}}s</span>
           </div>
       </div>
       <div class="form-button">
@@ -37,6 +37,7 @@ export default {
         headImg: require('@/assets/logo.png')
       },
       codeStatus:false,
+      timeNum:60,
       form: {
         phone: '',
         code: ''
@@ -57,21 +58,37 @@ export default {
   methods: {
     // 获取焦点黑色线条
     handelFocus(item){
-      this.$refs[item].style.borderBottomColor="#3C3C3E"
-      console.log(this.$refs[item].style)
+      this.$refs[item].style.borderBottomColor="#3C3C3E";
     },
     // 失去焦点灰色线条
     handelBlur(item){
-      this.$refs[item].style.borderBottomColor="#D3D1D1"
-      console.log(this.$refs[item].style)
+      this.$refs[item].style.borderBottomColor="#D3D1D1";
     },
     getCode () {
       this.codeStatus=true;
+      this.timeInterval('60')
       Toast('获取验证码成功')
     },
     onSubmit () {
       Toast('提交跳转')
     },
+    // 60s倒计时过后做..
+    doSomething(){
+      this.codeStatus=false;
+      return false;
+    },
+    // 倒计时
+    timeInterval(allTime){
+      let flag= 1;
+      let i = allTime;
+      setInterval(()=>{
+        i=i-1;
+        this.timeNum=i;
+        if(i==0){
+          this.doSomething();
+        }
+      },1000)
+    }
   },
   components: {
   }
