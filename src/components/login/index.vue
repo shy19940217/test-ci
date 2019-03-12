@@ -4,7 +4,7 @@
       <div><img :src="resData.headImg" alt=""></div>
       <div><span>{{resData.name}}</span></div>
     </div>
-    <form class="form">
+    <div class="form">
       <div class="form-item">
         <img class="icon-left" :src="phoneIcon" alt="">
         <label for=""></label>
@@ -14,12 +14,13 @@
         <img class="icon-left" :src="codeIcon" alt="">
         <label for=""></label>
         <input v-model="form.code" class="small-input" type="text" placeholder="请输入验证码">
-        <span @click="getCode">获取验证码</span>
+        <div class="getCode" @click="getCode">
+          获取验证码</div>
       </div>
       <div class="form-button">
         <button @click="onSubmit">确认绑定</button>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -95,19 +96,26 @@ export default {
         flex-direction: row;
         align-items: center;
         input{
-          flex: 1;
+          display: flex;
+          flex: 4;
+          width: 80%;
           height:24px;
           line-height: 24px;
           padding: 0 3px 0 3px;
           color: #3C3C3E;
           letter-spacing: 0;
+          border: none;
         }
         .icon-left{
+          display: flex;
+          flex: 0;
           margin-left: 10px;
           width: 13px;
         }
-        span{
-          width: 80px;
+        .getCode{
+          display: flex;
+          flex: 2;
+          width: 100%;
           text-align: right;
           font-size: 16px;
           color: #FF0014;
@@ -122,10 +130,12 @@ export default {
         height: 50px;
         font-size: 16px;
         line-height: 50px;
-        color: #FFFFFF;
         text-align: center;
         button{
           width: 100%;
+          color: #FFFFFF;
+          background: none;
+          border: none;
         }
       }
     }
