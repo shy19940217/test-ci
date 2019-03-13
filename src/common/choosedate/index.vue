@@ -86,7 +86,7 @@ export default {
         d.setDate(d.getDate() + i)
         this.days.push(d)
       }
-      console.log(this.days)
+      // console.log(this.days)
     }
   },
   components: {

@@ -71,7 +71,7 @@ export default {
     justify-content: space-between;
     width: 345px;
     height: 113px;
-    margin: 0 auto 40px;
+    margin: 0 auto 15px;
     background: #FFFFFF;
     box-shadow: 0 2px 10px 0 rgba(205,170,173,0.20);
     border-radius: 3px;

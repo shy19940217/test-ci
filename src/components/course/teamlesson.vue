@@ -1,7 +1,7 @@
 <template>
   <div class="teamlesson">
      <choosedate></choosedate>
-     <div class="teamlessonlist" v-for="(item,index) in reservationlist" :key="index" v-bind:class="item.status ==0 || item.status ==1 ? 'teamlessonlist':'teamlessonend'">
+     <div class="teamlessonlist" v-for="(item,index) in reservationlist" :key="index" v-bind:class="item.status ==0 || item.status ==1 ? 'teamlessonlist':'teamlessonend'" @click="godetail(item)">
        <img class="teamlessonlist_col_fl" :src="item.imageUrl">
        <div class="teamlessonlist_col_fr">
          <div class="title">
@@ -28,7 +28,7 @@
                 />
              </div>
              <div class="operate_col_fr">
-                <span v-if="item.status == 0" class="fillbtn">预约</span>
+                <span v-if="item.status == 0" class="fillbtn" v-on:click.stop="goorder()">预约</span>
                 <span v-if="item.status == 1" class="emptybtn">已预约</span>
                 <span v-if="item.status == 2" class="disabledbtn">已结束</span>
              </div>
@@ -109,12 +109,22 @@ export default {
       ]
     }
   },
-  created () {},
+  created () {
+  },
   computed: {},
   watch: {},
   mounted () {},
   methods: {
-
+    godetail () {
+      this.$router.push({
+        path: '/teamlesson_detail'
+      })
+    },
+    goorder () {
+      this.$router.push({
+        path: '/teamlesson_order'
+      })
+    }
   },
   components: {
     choosedate,

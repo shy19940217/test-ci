@@ -36,8 +36,8 @@ export default {
         name: '微信会员',
         headImg: require('@/assets/logo.png')
       },
-      codeStatus:false,
-      timeNum:60,
+      codeStatus: false,
+      timeNum: 60,
       form: {
         phone: '',
         code: ''
@@ -57,15 +57,15 @@ export default {
   mounted () {},
   methods: {
     // 获取焦点黑色线条
-    handelFocus(item){
-      this.$refs[item].style.borderBottomColor="#3C3C3E";
+    handelFocus (item) {
+      this.$refs[item].style.borderBottomColor = '#3C3C3E'
     },
     // 失去焦点灰色线条
-    handelBlur(item){
-      this.$refs[item].style.borderBottomColor="#D3D1D1";
+    handelBlur (item) {
+      this.$refs[item].style.borderBottomColor = '#D3D1D1'
     },
     getCode () {
-      this.codeStatus=true;
+      this.codeStatus = true
       this.timeInterval('60')
       Toast('获取验证码成功')
     },
@@ -73,21 +73,21 @@ export default {
       Toast('提交跳转')
     },
     // 60s倒计时过后做..
-    doSomething(){
-      this.codeStatus=false;
-      return false;
+    doSomething () {
+      this.codeStatus = false
+      return false
     },
     // 倒计时
-    timeInterval(allTime){
-      let flag= 1;
-      let i = allTime;
-      setInterval(()=>{
-        i=i-1;
-        this.timeNum=i;
-        if(i==0){
-          this.doSomething();
+    timeInterval (allTime) {
+      // let flag = 1
+      let i = allTime
+      setInterval(() => {
+        i = i - 1
+        this.timeNum = i
+        if (i === 0) {
+          this.doSomething()
         }
-      },1000)
+      }, 1000)
     }
   },
   components: {

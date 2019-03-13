@@ -3,7 +3,8 @@ export default [
     path: '/person',
     name: '我的',
     meta: {
-      title: '我的'
+      title: '我的',
+      keepAlive: true
     },
     component: resolve => require(['@/components/person/index'], resolve)
   },

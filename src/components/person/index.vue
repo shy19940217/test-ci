@@ -79,11 +79,32 @@ export default {
   name: '',
   data () {
     return {
-
+      isFromTester: false
     }
   },
-  created () {},
+  created () {
+    // debugger
+  },
   computed: {},
+  beforeRouteEnter (to, from, next) {
+    console.log(to, from)
+    if (from.path === '/home' || from.path.indexOf('/course') > -1) {
+      next(vm => {
+        vm.isFromTester = true
+      })
+    } else {
+      next(vm => {
+        vm.isFromTesters = false
+      })
+    }
+  },
+  activated () {
+    this.$nextTick(() => {
+      if (this.isFromTester) {
+      }
+      this.isFromTester = false
+    })
+  },
   watch: {},
   mounted () {},
   methods: {

@@ -8,7 +8,9 @@
      </van-tabs>
      </div>
      <div class="content">
-        <router-view></router-view>
+       <keep-alive>
+          <router-view></router-view>
+       </keep-alive>
      </div>
   </div>
 </template>
@@ -78,7 +80,13 @@ export default {
     'van-tab': Tab
   },
   computed: {},
-  watch: {},
+  watch: {
+    '$route' (from, to) {
+      if (from.path === '/course') {
+        this.initRouter()
+      }
+    }
+  },
   mounted () {},
   methods: {
     initRouter () {
