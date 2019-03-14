@@ -82,6 +82,15 @@ export default function setTitle (title) {
     }
   }
 }
+// 转换成yy/mm/dd
+export function formattime (value) {
+  var year = value.getFullYear()
+  var month = value.getMonth() + 1
+  month = month < 10 ? ('0' + month) : month
+  var day = value.getDate()
+  day = day < 10 ? ('0' + day) : day
+  return year + '/' + month + '/' + day
+}
 
 function get0 (num) {
   return num < 10 ? ('0' + num) : num

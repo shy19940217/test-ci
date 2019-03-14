@@ -28,9 +28,9 @@
                 />
              </div>
              <div class="operate_col_fr">
-                <span v-if="item.status == 0" class="fillbtn" v-on:click.stop="goorder()">预约</span>
-                <span v-if="item.status == 1" class="emptybtn">已预约</span>
-                <span v-if="item.status == 2" class="disabledbtn">已结束</span>
+                <span v-if="item.status == 0" class="fillbtn" v-on:click.stop="goorder(item)">预约</span>
+                <span v-if="item.status == 1" class="emptybtn" v-on:click.stop="goorder(item)">已预约</span>
+                <span v-if="item.status == 2" class="disabledbtn" v-on:click.stop="goorder(item)">已结束</span>
              </div>
         </div>
        </div>
@@ -120,7 +120,10 @@ export default {
         path: '/teamlesson_detail'
       })
     },
-    goorder () {
+    goorder (item) {
+      if (item.status === 1 || item.status === 2) {
+        return
+      }
       this.$router.push({
         path: '/teamlesson_order'
       })

@@ -15,13 +15,14 @@
            </div>
         </div>
         <div class="beautifylist_col_fr">
-            <span class="fillbtn">预约</span>
+            <span class="fillbtn" v-on:click.stop="goorder(item)">预约</span>
         </div>
      </div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: '',
   data () {
@@ -53,7 +54,18 @@ export default {
   watch: {},
   mounted () {},
   methods: {
-
+    ...mapMutations('course', ['updateTime', 'updateServicePerson', 'updateServiceStore']),
+    goorder (item) {
+      this.updateTime('请选择预约时间')
+      this.updateServicePerson('请选择服务人员')
+      this.updateServiceStore('请选择服务门店')
+      this.$router.push({
+        path: '/beautify_order',
+        query: {
+          from: 'list'
+        }
+      })
+    }
   },
   components: {
 

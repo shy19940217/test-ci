@@ -1,11 +1,11 @@
 <template>
   <div class="course">
      <div class="taboption">
-       <van-tabs v-model="active"  title-active-color="#FF0014" title-inactive-color="#A5A5A8" :line-width="60" :line-height="5">
-        <van-tab v-for="(item,index) in tablist" :key="index">
-                <div class="tab-title" slot="title" @click="checktab(item,index)">{{ item.title }}</div>
-        </van-tab>
-     </van-tabs>
+      <van-tabs v-model="active"  title-active-color="#FF0014" title-inactive-color="#A5A5A8" :line-width="60" :line-height="5">
+          <van-tab v-for="(item,index) in tablist" :key="index">
+                  <div class="tab-title" slot="title" @click="checktab(item,index)">{{ item.title }}</div>
+          </van-tab>
+      </van-tabs>
      </div>
      <div class="content">
        <keep-alive>

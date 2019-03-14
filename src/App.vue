@@ -101,6 +101,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
+  touch-action: none;
   min-height: 100%;
   line-height: 1;
   -webkit-text-size-adjust: 100% !important;

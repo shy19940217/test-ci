@@ -4,7 +4,7 @@
       <div @click="pick(day,index)" v-for="(day, index) in days" :key="index" :class="index==active ? 'checkedday':'day'">
       <span class="date">{{ day | flitertime }}</span>
       <span class="week">{{ day | filterweek }}</span>
-      <span class="lesson">3节课</span>
+      <span class="lesson" v-if="day.lesson">{{day.lesson}}</span>
       </div>
     </div>
 </div>
@@ -21,13 +21,13 @@ export default {
       } else {
         value = value.getDay()
         let obj = {
-          0: '星期日',
-          1: '星期一',
-          2: '星期二',
-          3: '星期三',
-          4: '星期四',
-          5: '星期五',
-          6: '星期六'
+          0: '周日',
+          1: '周一',
+          2: '周二',
+          3: '周三',
+          4: '周四',
+          5: '周五',
+          6: '周六'
         }
         return obj[value]
       }
@@ -59,6 +59,7 @@ export default {
   methods: {
     pick (day, index) {
       this.active = index
+      this.$emit('onchange', day)
     },
     formatDate (year, month, day) {
       const y = year
