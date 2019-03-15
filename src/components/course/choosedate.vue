@@ -4,7 +4,7 @@
         <choosedate @onchange="changedate"></choosedate>
     </div>
      <div class="timequantum">
-        <div class="item" v-for="(item,index) in timelist" :key="index" v-bind:class="[index==active ? 'active' : '', item.disabled ? 'disabled':'']"  @click="!item.disabled&&checktab(item,index)">
+        <div class="item" v-for="(item,index) in timelist" :key="index" v-bind:class="[index==chooseDateObj.active ? 'active' : '', item.disabled ? 'disabled':'']"  @click="!item.disabled&&checktab(item,index)">
             <span>{{item.time}}</span>
         </div>
      </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import { formattime } from '@/js/util'
 import choosedate from '@/common/choosedate'
 export default {
@@ -22,7 +22,6 @@ export default {
     return {
       date: new Date(),
       time: '',
-      active: null,
       timelist: [
         {
           time: '10:00-10:30',
@@ -54,25 +53,33 @@ export default {
   created () {
     this.date = formattime(this.date)
   },
-  computed: {},
+  computed: {
+    ...mapState('course', ['chooseDateObj'])
+  },
   watch: {},
   mounted () {},
   methods: {
-    ...mapMutations('course', ['updateTime']),
+    ...mapMutations('course', ['updateTime', 'updateChooseDateObj']),
     changedate (date) {
       this.date = formattime(date)
     },
     confirm () {
-      if (this.time === '') {
+      if (this.chooseDateObj.name === '') {
         this.$toast('请选择时间段')
       } else {
         let date = this.date + '  ' + this.time
         this.updateTime(date)
+        // this.updateChooseDateObj()
         this.$router.go(-1)
       }
     },
     checktab (item, index) {
-      this.active = index
+      let obj = {
+        active: index,
+        name: item.time
+      }
+      this.updateChooseDateObj(obj)
+      // this.chooseDateObj.active = index
       this.time = item.time
     }
   },
@@ -128,6 +135,6 @@ export default {
            left: 50%;
            transform: translateX(-50%);
            border-radius: 19px;
-       }
+      }
    }
 </style>

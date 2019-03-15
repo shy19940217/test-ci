@@ -60,13 +60,40 @@ export default [
     component: resolve => require(['@/components/course/beautify_order'], resolve)
   },
   {
+    path: '/training_detail',
+    name: '私教详情',
+    meta: {
+      title: '私教详情'
+    },
+    component: resolve => require(['@/components/course/training_detail'], resolve)
+  },
+  {
+    path: '/training_order',
+    name: '私教预约',
+    meta: {
+      // keepAlive: true,
+      isBack: false,
+      title: '私教预约'
+    },
+    component: resolve => require(['@/components/course/training_order'], resolve)
+  },
+  {
     path: '/choosedate',
     name: '选择时间',
     meta: {
-      title: '美容服务详情',
+      title: '选择时间',
       keepAlive: true
     },
     component: resolve => require(['@/components/course/choosedate'], resolve)
+  },
+  {
+    path: '/chooseproject',
+    name: '选择项目',
+    meta: {
+      title: '选择项目',
+      keepAlive: true
+    },
+    component: resolve => require(['@/components/course/chooseproject'], resolve)
   },
   {
     path: '/chooseperson',
@@ -79,7 +106,7 @@ export default [
   },
   {
     path: '/choosestore',
-    name: '选择服务人员',
+    name: '选择服务门店',
     meta: {
       title: '选择服务门店',
       keepAlive: true

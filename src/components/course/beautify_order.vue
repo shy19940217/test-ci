@@ -53,12 +53,7 @@ export default {
   },
 
   created () {
-    // if (this.$route.query && this.$route.query.from === 'list') {
-    //     this.updateTime('请选择预约时间')
-    //     this.updateServicePerson('请选择服务人员')
-    //     this.updateServiceStore('请选择服务门店')
-    // }
-    //   console.log(this.time)
+
   },
   computed: {
     ...mapState('course', ['time', 'serviceStore', 'servicePerson'])

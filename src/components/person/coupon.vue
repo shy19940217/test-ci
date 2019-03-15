@@ -150,11 +150,11 @@ export default {
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                width: 345px;
+                width: 365px;
                 height: 100px;
                 margin: 0 auto 15px;
                 background: url('~@/assets/coupon.png');
-                background-size:345px 100px;
+                background-size:365px 100px;
                 .banlancelist_item_fl{
                     display: flex;
                     flex-direction: row;

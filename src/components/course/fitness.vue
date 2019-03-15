@@ -1,6 +1,6 @@
 <template>
   <div class='beautify'>
-     <div class="beautifylist" v-for="(item,index) in beautifylist" :key="index">
+     <div class="beautifylist" v-for="(item,index) in beautifylist" :key="index" @click="godetail()">
         <div class="beautifylist_col_fl">
            <img class="photo" :src="item.imageUrl">
            <div class="content">
@@ -16,7 +16,7 @@
            </div>
         </div>
         <div class="beautifylist_col_fr">
-            <span class="fillbtn">预约</span>
+            <span class="fillbtn" v-on:click.stop="goorder(item)">预约</span>
         </div>
      </div>
   </div>
@@ -54,7 +54,16 @@ export default {
   watch: {},
   mounted () {},
   methods: {
-
+    godetail () {
+      this.$router.push({
+        path: '/training_detail'
+      })
+    },
+    goorder () {
+      this.$router.push({
+        path: '/training_order'
+      })
+    }
   },
   components: {
 

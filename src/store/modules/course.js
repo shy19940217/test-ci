@@ -1,10 +1,23 @@
+// import { debug } from 'util'
 
 const course = {
   namespaced: true,
   state: {
     time: '请选择预约时间',
     serviceStore: '请选择服务门店',
-    servicePerson: '请选择服务人员'
+    servicePerson: '请选择服务人员',
+    chooseDateObj: {
+      active: null,
+      name: ''
+    },
+    choosePersonObj: {
+      active: null,
+      name: ''
+    },
+    chooseStoreObj: {
+      active: null,
+      name: ''
+    }
 
   },
   mutations: {
@@ -22,6 +35,15 @@ const course = {
     //   state.sidebar.opened = false
     //   state.sidebar.withoutAnimation = withoutAnimation
     // },
+    updateChooseDateObj: (state, data) => {
+      state.chooseDateObj = data
+    },
+    updatechoosePersonObj: (state, data) => {
+      state.choosePersonObj = data
+    },
+    updatechooseStoreObj: (state, data) => {
+      state.chooseStoreObj = data
+    },
     updateTime: (state, time) => {
       state.time = time
     },
