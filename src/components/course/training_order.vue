@@ -45,7 +45,8 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import StarRate from 'vue-cute-rate'
+import { mapState } from 'vuex'
 export default {
   name: '',
   data () {
@@ -72,11 +73,15 @@ export default {
     }
   },
   components: {
-
+    StarRate
   }
 }
 </script>
-
+<style>
+  .star-main {
+    margin: 0px auto !important;
+  }
+</style>
 <style lang='scss' scoped>
     .traning_order{
         .headimg{
