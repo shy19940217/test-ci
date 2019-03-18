@@ -8,12 +8,12 @@
     <div class="taboption">
        <van-tabs v-model="active"  title-active-color="#FF0014" title-inactive-color="#A5A5A8" :line-width="60" :line-height="5">
         <van-tab v-for="(item,index) in tabs" :key="index">
-                <div class="tab-title" slot="title" @click="onClick(item)">{{ item.title }}</div>
+          <div class="tab-title" slot="title">{{ item.title }}</div>
         </van-tab>
      </van-tabs>
     </div>
     <div class="content">
-       <div class="list" v-for="(item,index) in reservationlist" :key="index">
+       <div class="list" v-for="(item,index) in reservationlist" :key="index" @click="godetail(item)">
            <div class="reservation_col_fl">
                <img class="photo" :src="item.imageUrl">
                <div class="desc">
@@ -138,6 +138,15 @@ export default {
   methods: {
     onClick (id) {
 
+    },
+    godetail (item) {
+      if (item.status === 0) {
+        this.$router.push({
+          path: '/detail'
+        })
+      } else {
+        return false
+      }
     }
   },
   components: {
@@ -146,31 +155,6 @@ export default {
   }
 }
 </script>
-<style>
-   /* .van-tabs__wrap{
-       height: 90px;
-   }
-   .van-tabs, .van-tabs--line{
-     height: 60px !important;
-   }
-   .van-tabs--line .van-tabs__wrap{
-     height: 90px;
-   }
-   .van-tab, .van-tab--active{
-   }
-   .tab-title{
-     padding: 29px 0 25px 0;
-   }
-   .van-tab--active{
-     color: #FF0014;
-   }
-   .van-ellipsis{
-     display: inline-block;
-     font-size: 32px;
-     text-align: center;
-   } */
-
-</style>
 <style lang='scss' scoped>
       .mysubscribe{
            position: fixed;

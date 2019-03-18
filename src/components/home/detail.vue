@@ -72,6 +72,7 @@ export default {
         title: '提示',
         message: '确认取消预约的课程吗？'
       }).then(() => {
+        this.$router.go(-1)
         // on confirm
       }).catch(() => {
         // on cancel
