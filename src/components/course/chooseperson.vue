@@ -1,6 +1,6 @@
 <template>
   <div class='chooseperson'>
-    <div class="personlist" v-for ="(item,index) in list" :key="index" v-bind:class="index == choosePersonObj.active ? 'active':''" @click="choose(item,index)">
+    <div class="personlist" v-for ="(item,index) in list" :key="index" v-bind:class="index == active ? 'active':''" @click="choose(item,index)">
         <img class="img" src="@/assets/celebrity/person1.png">
         <div class="desc">
             <div class="title">
@@ -29,13 +29,13 @@ export default {
   data () {
     return {
       name: '',
-      // active: null,
+      active: null,
       list: [{
         name: '小美',
         frequency: '88次',
         scope: 2.5
       }, {
-        name: '小美',
+        name: '小裏',
         frequency: '88次',
         scope: 2.5
       }, {
@@ -52,18 +52,18 @@ export default {
   watch: {},
   mounted () {},
   methods: {
-    ...mapMutations('course', ['updateServicePerson', 'updatechoosePersonObj']),
+    ...mapMutations('course', ['updateServicePerson']),
     choose (item, index) {
-      let obj = {
-        active: index,
-        name: item.name
-      }
-      this.updatechoosePersonObj(obj)
+      // let obj = {
+      //   active: index,
+      //   name: item.name
+      // }
+      // this.updatechoosePersonObj(obj)
       this.name = item.name
-      // this.active = index
+      this.active = index
     },
     confirm () {
-      if (this.choosePersonObj.name === '') {
+      if (this.name === '') {
         this.$toast('请选择服务人员')
       } else {
         this.updateServicePerson(this.name)

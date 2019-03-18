@@ -1,19 +1,17 @@
 <template>
   <div class='chooseperson'>
-    <div class="personlist" v-for ="(item,index) in list" :key="index" v-bind:class="index == choosePersonObj.active ? 'active':''" @click="choose(item,index)">
+    <div class="personlist" v-for ="(item,index) in list" :key="index" v-bind:class="index == active ? 'active':''" @click="choose(item,index)">
         <img class="img" src="@/assets/celebrity/person1.png">
         <div class="desc">
             <div class="title">
               <span>{{item.name}}</span>
-              <span>/服务次数</span>
-              <span>{{item.frequency}}</span>
             </div>
-            <div class="rate">
-             <star-rate :value="item.scope" type="star1" font-size="11" :disabled="true"
-             :star-half="true"
-             active-color="#FF7900"
-             />
-             <span class="scope">{{item.scope}}分</span>
+            <div class="time">
+             <span>时长:</span>
+             <span class="scope">{{item.time}}分钟</span>
+            </div>
+            <div class="money">
+             <span>￥</span><span>{{item.money}}</span>
             </div>
         </div>
     </div>
@@ -23,56 +21,50 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex'
-import StarRate from 'vue-cute-rate'
 export default {
   name: '',
   data () {
     return {
       name: '',
-      // active: null,
+      active: null,
       list: [{
-        name: '小美',
-        frequency: '88次',
-        scope: 2.5
+        name: '核心提升',
+        time: '88次',
+        money: '20'
       }, {
-        name: '小美',
-        frequency: '88次',
-        scope: 2.5
+        name: '核心提升',
+        time: '88次',
+        money: '20'
       }, {
-        name: '小美',
-        frequency: '88次',
-        scope: 2.5
+        name: '核心提升',
+        time: '88次',
+        money: '20'
       }]
     }
   },
   created () {},
   computed: {
-    ...mapState('course', ['choosePersonObj'])
+    ...mapState('course', ['serviceProject'])
   },
   watch: {},
   mounted () {},
   methods: {
-    ...mapMutations('course', ['updateServicePerson', 'updatechoosePersonObj']),
+    ...mapMutations('course', ['updateServiceProject']),
     choose (item, index) {
-      let obj = {
-        active: index,
-        name: item.name
-      }
-      this.updatechoosePersonObj(obj)
       this.name = item.name
-      // this.active = index
+      this.updateServiceProject(this.name)
+      this.active = index
     },
     confirm () {
-      if (this.choosePersonObj.name === '') {
-        this.$toast('请选择服务人员')
+      if (this.name === '') {
+        this.$toast('请选择服务项目')
       } else {
-        this.updateServicePerson(this.name)
         this.$router.go(-1)
       }
     }
   },
   components: {
-    StarRate
+
   }
 }
 </script>
@@ -96,9 +88,9 @@ export default {
           flex-direction: row;
           align-items: center;
          .img{
-           width: 55px;
-           height: 55px;
-           border-radius: 50%;
+           width: 70px;
+           height: 83px;
+           border-radius: 3px;
            margin-left: 15px;
          }
          .desc{
@@ -107,24 +99,22 @@ export default {
                 margin-bottom: 7px;
                 span{
                     &:nth-of-type(1){
-                        font-size: 13px;
-                        color: #3C3C3E;
-                    }
-                    &:nth-of-type(2){
-                        font-size: 12px;
-                        color: #A5A5A8;
-                    }
-                    &:nth-of-type(3){
-                        font-size: 12px;
-                        color: #A5A5A8;
+                       font-size: 16px;
+                       color: #3C3C3E;
                     }
                 }
              }
-             .rate{
-                 .scope{
-                     font-size: 11px;
-                     color: #FF7900;
-                 }
+             .time{
+                span{
+                  font-size: 12px;
+                  color: #A5A5A8;
+                }
+             }
+             .money{
+               margin-top: 8px;
+               font-family: PingFangSC-Semibold;
+               font-size: 16px;
+               color: #FF7900;
              }
          }
       }

@@ -11,17 +11,17 @@ export default [
       {
         path: '/course/teamlesson',
         name: '团体课程',
-        component: resolve => require(['@/components/course/teamlesson'], resolve)
+        component: resolve => require(['@/components/course/template1/teamlesson'], resolve)
       },
       {
         path: '/course/beautify',
         name: '美容服务',
-        component: resolve => require(['@/components/course/beautify'], resolve)
+        component: resolve => require(['@/components/course/template2/beautify'], resolve)
       },
       {
         path: '/course/fitness',
         name: '健身私教',
-        component: resolve => require(['@/components/course/fitness'], resolve)
+        component: resolve => require(['@/components/course/template3/fitness'], resolve)
       }
     ]
   },
@@ -31,7 +31,7 @@ export default [
     meta: {
       title: '详情'
     },
-    component: resolve => require(['@/components/course/teamlesson_detail'], resolve)
+    component: resolve => require(['@/components/course/template1/teamlesson_detail'], resolve)
   },
   {
     path: '/teamlesson_order',
@@ -39,7 +39,7 @@ export default [
     meta: {
       title: '团体课程预约'
     },
-    component: resolve => require(['@/components/course/teamlesson_order'], resolve)
+    component: resolve => require(['@/components/course/template1/teamlesson_order'], resolve)
   },
   {
     path: '/beautify_detail',
@@ -47,7 +47,7 @@ export default [
     meta: {
       title: '美容服务详情'
     },
-    component: resolve => require(['@/components/course/beautify_detail'], resolve)
+    component: resolve => require(['@/components/course/template2/beautify_detail'], resolve)
   },
   {
     path: '/beautify_order',
@@ -57,7 +57,7 @@ export default [
       isBack: false,
       title: '美容服务预约'
     },
-    component: resolve => require(['@/components/course/beautify_order'], resolve)
+    component: resolve => require(['@/components/course/template2/beautify_order'], resolve)
   },
   {
     path: '/training_detail',
@@ -65,7 +65,7 @@ export default [
     meta: {
       title: '私教详情'
     },
-    component: resolve => require(['@/components/course/training_detail'], resolve)
+    component: resolve => require(['@/components/course/template3/training_detail'], resolve)
   },
   {
     path: '/training_order',
@@ -75,14 +75,13 @@ export default [
       isBack: false,
       title: '私教预约'
     },
-    component: resolve => require(['@/components/course/training_order'], resolve)
+    component: resolve => require(['@/components/course/template3/training_order'], resolve)
   },
   {
     path: '/choosedate',
     name: '选择时间',
     meta: {
-      title: '选择时间',
-      keepAlive: true
+      title: '选择时间'
     },
     component: resolve => require(['@/components/course/choosedate'], resolve)
   },
@@ -90,8 +89,7 @@ export default [
     path: '/chooseproject',
     name: '选择项目',
     meta: {
-      title: '选择项目',
-      keepAlive: true
+      title: '选择项目'
     },
     component: resolve => require(['@/components/course/chooseproject'], resolve)
   },
@@ -99,8 +97,7 @@ export default [
     path: '/chooseperson',
     name: '选择服务人员',
     meta: {
-      title: '选择服务人员',
-      keepAlive: true
+      title: '选择服务人员'
     },
     component: resolve => require(['@/components/course/chooseperson'], resolve)
   },
@@ -108,8 +105,7 @@ export default [
     path: '/choosestore',
     name: '选择服务门店',
     meta: {
-      title: '选择服务门店',
-      keepAlive: true
+      title: '选择服务门店'
     },
     component: resolve => require(['@/components/course/choosestore'], resolve)
   }

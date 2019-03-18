@@ -4,7 +4,7 @@
         <choosedate @onchange="changedate"></choosedate>
     </div>
      <div class="timequantum">
-        <div class="item" v-for="(item,index) in timelist" :key="index" v-bind:class="[index==chooseDateObj.active ? 'active' : '', item.disabled ? 'disabled':'']"  @click="!item.disabled&&checktab(item,index)">
+        <div class="item" v-for="(item,index) in timelist" :key="index" v-bind:class="[index==active ? 'active' : '', item.disabled ? 'disabled':'']"  @click="!item.disabled&&checktab(item,index)">
             <span>{{item.time}}</span>
         </div>
      </div>
@@ -21,6 +21,7 @@ export default {
   data () {
     return {
       date: new Date(),
+      active: null,
       time: '',
       timelist: [
         {
@@ -64,23 +65,25 @@ export default {
       this.date = formattime(date)
     },
     confirm () {
-      if (this.chooseDateObj.name === '') {
+      if (this.time === '') {
         this.$toast('请选择时间段')
       } else {
         let date = this.date + '  ' + this.time
         this.updateTime(date)
-        // this.updateChooseDateObj()
         this.$router.go(-1)
       }
     },
     checktab (item, index) {
-      let obj = {
-        active: index,
-        name: item.time
-      }
-      this.updateChooseDateObj(obj)
+      // this.updateChooseDateObj(obj)
       // this.chooseDateObj.active = index
       this.time = item.time
+      this.active = index
+      let obj = {
+        active: index,
+        name: item.time,
+        time: this.time
+      }
+      this.updateChooseDateObj(obj)
     }
   },
   components: {

@@ -5,11 +5,12 @@
            <img class="photo" :src="item.imageUrl">
            <div class="content">
               <div class="title">{{item.title}}</div>
-              <div class="desc">
+              <!-- <div class="desc">
                   <span>服务时长：</span>
                   <span>{{item.servicetime}}</span>
-              </div>
-              <div class="money">
+              </div> -->
+              <div class="lesson">
+                  <span>累计上课：</span>
                   <span>{{item.money}}</span>
               </div>
            </div>
@@ -54,29 +55,27 @@ export default {
   watch: {},
   mounted () {},
   methods: {
-    ...mapMutations('course', ['updateTime', 'updateServicePerson', 'updateServiceStore', 'updateChooseDateObj', 'updatechoosePersonObj', 'updatechooseStoreObj']),
-    goorder (item) {
-      this.updateTime('请选择预约时间')
-      this.updateServicePerson('请选择服务人员')
-      this.updateServiceStore('请选择服务门店')
-      let obj = {
-        active: null,
-        name: ''
-      }
-      this.updateChooseDateObj(obj)
-      this.updatechoosePersonObj(obj)
-      this.updatechooseStoreObj(obj)
-      // this.updatechoosePersonObj(obj)
-      this.$router.push({
-        path: '/beautify_order',
-        query: {
-          from: 'list'
-        }
-      })
-    },
+    ...mapMutations('course', ['updateTime', 'updateServiceProject', 'updateChooseProjectObj']),
     godetail () {
       this.$router.push({
-        path: '/beautify_detail'
+        path: '/training_detail'
+      })
+    },
+    goorder () {
+      // let obj = {
+      //   active: null,
+      //   name: '请选择服务项目'
+      // }
+      // let obj1 = {
+      //   active: null,
+      //   name: '请选择服务时间'
+      // }
+      // this.updateChooseDateObj(obj1)
+      // this.updateChooseProjectObj(obj)
+      this.updateTime('请选择预约时间')
+      this.updateServiceProject('请选择服务项目')
+      this.$router.push({
+        path: '/training_order'
       })
     }
   },
@@ -115,15 +114,9 @@ export default {
               color: #3C3C3E;
               margin-bottom: 8px;
           }
-          .desc{
-              font-size: 12px;
-              color: #A5A5A8;
-              margin-bottom: 8px;
-          }
-          .money{
-             font-family: PingFangSC-Semibold;
-             font-size: 16px;
-             color: #FF7900;
+          .lesson{
+            font-size: 12px;
+            color: #A5A5A8;
           }
       }
     }

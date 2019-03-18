@@ -44,8 +44,8 @@ export default {
   watch: {},
   mounted () {},
   methods: {
-    order () {
-      this.$toastinfo('预约成功')
+    async order () {
+      await this.$toastinfo('预约成功')
       this.$router.go(-1)
     }
   },

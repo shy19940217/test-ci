@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import {setWechatTitle} from '@/js/util'
 import { Tab, Tabs } from 'vant'
 export default {
   name: '',
@@ -74,6 +75,7 @@ export default {
       this.active = 0
     }
     this.initRouter()
+    setWechatTitle('课程服务')
   },
   components: {
     'van-tabs': Tabs,

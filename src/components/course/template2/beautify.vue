@@ -5,12 +5,11 @@
            <img class="photo" :src="item.imageUrl">
            <div class="content">
               <div class="title">{{item.title}}</div>
-              <!-- <div class="desc">
+              <div class="desc">
                   <span>服务时长：</span>
                   <span>{{item.servicetime}}</span>
-              </div> -->
-              <div class="lesson">
-                  <span>累计上课：</span>
+              </div>
+              <div class="money">
                   <span>{{item.money}}</span>
               </div>
            </div>
@@ -23,6 +22,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: '',
   data () {
@@ -54,14 +54,29 @@ export default {
   watch: {},
   mounted () {},
   methods: {
-    godetail () {
+    ...mapMutations('course', ['updateTime', 'updateServicePerson', 'updateServiceStore']),
+    goorder (item) {
+      this.updateTime('请选择预约时间')
+      this.updateServicePerson('请选择服务人员')
+      this.updateServiceStore('请选择服务门店')
+      // let obj = {
+      //   active: null,
+      //   name: ''
+      // }
+      // this.updateChooseDateObj(obj)
+      // this.updatechoosePersonObj(obj)
+      // this.updatechooseStoreObj(obj)
+      // this.updatechoosePersonObj(obj)
       this.$router.push({
-        path: '/training_detail'
+        path: '/beautify_order',
+        query: {
+          from: 'list'
+        }
       })
     },
-    goorder () {
+    godetail () {
       this.$router.push({
-        path: '/training_order'
+        path: '/beautify_detail'
       })
     }
   },
@@ -100,9 +115,15 @@ export default {
               color: #3C3C3E;
               margin-bottom: 8px;
           }
-          .lesson{
-            font-size: 12px;
-            color: #A5A5A8;
+          .desc{
+              font-size: 12px;
+              color: #A5A5A8;
+              margin-bottom: 8px;
+          }
+          .money{
+             font-family: PingFangSC-Semibold;
+             font-size: 16px;
+             color: #FF7900;
           }
       }
     }

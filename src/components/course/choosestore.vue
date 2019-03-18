@@ -1,6 +1,6 @@
 <template>
   <div class='chooseperson'>
-    <div class="personlist" v-for ="(item,index) in list" :key="index" v-bind:class="index == chooseStoreObj.active ? 'active':''" @click="choose(item,index)">
+    <div class="personlist" v-for ="(item,index) in list" :key="index" v-bind:class="index == active ? 'active':''" @click="choose(item,index)">
         <img class="img" src="@/assets/celebrity/person1.png">
         <div class="desc">
            <div class="name">
@@ -57,10 +57,10 @@ export default {
       }
       this.updatechooseStoreObj(obj)
       this.name = item.name
-      // this.active = index
+      this.active = index
     },
     confirm () {
-      if (this.chooseStoreObj.name === '') {
+      if (this.name === '') {
         this.$toast('请选择服务门店')
       } else {
         this.updateServiceStore(this.name)

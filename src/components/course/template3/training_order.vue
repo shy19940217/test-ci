@@ -34,8 +34,8 @@
         </div>
         <div class="option_item">
             <span class="title">服务项目</span>
-            <div class="choose" @click="goServceStore()" v-bind:class="serviceStore === '请选择服务门店'?'':'checked'">
-                   <span>{{serviceStore}}</span>
+            <div class="choose" @click="goServceStore()" v-bind:class="serviceProject === '请选择服务项目'?'':'checked'">
+                   <span>{{serviceProject}}</span>
                    <img class="img" src="@/assets/icon/jiantou.png">
             </div>
         </div>
@@ -56,7 +56,7 @@ export default {
   },
   created () {},
   computed: {
-    ...mapState('course', ['time', 'serviceStore', 'servicePerson'])
+    ...mapState('course', ['time', 'serviceProject'])
   },
   watch: {},
   mounted () {},
@@ -65,6 +65,15 @@ export default {
       this.$router.push({
         path: '/choosedate'
       })
+    },
+    order () {
+      if (this.time === '请选择预约时间') {
+        this.$toast('预约时间不能为空')
+      } else if (this.serviceProject === '请选择服务项目') {
+        this.$toast('服务项目不能为空')
+      } else {
+        this.$router.go(-1)
+      }
     },
     goServceStore () {
       this.$router.push({

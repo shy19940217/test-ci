@@ -50,6 +50,21 @@ attachFastClick.attach(document.body)
 //   }
 //   next()
 // })
+router.beforeEach((to, from, next) => {
+  // 如果to /的就先不去处理
+  // 否则没有openid的话 就得去授权拿
+  /* 路由发生变化修改页面title */
+  let isUpdata = false
+  let routerArray = to.matched
+  for (let i = routerArray.length - 1; i >= 0; i--) {
+    // console.log(routerArray[i])
+    if (routerArray[i].name && !isUpdata) {
+      document.title = routerArray[i].name
+      isUpdata = true
+    }
+  }
+  next()
+})
 // router.afterEach((to, from, next) => {
 //   // 回到顶部
 //   if (to.fullPath === '/home' || to.fullPath === '/celebrity' || to.fullPath === '/community' || to.fullPath === '/activity' || to.fullPath === '/strategy') {

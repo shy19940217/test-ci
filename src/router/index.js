@@ -4,6 +4,7 @@ import homerouter from './home'
 import courserouter from './course'
 import personrouter from './person'
 import loginrouter from './login'
+import commonrouter from './common'
 // Vue.use(Router)
 export default new Router({
   routes: [
@@ -18,7 +19,8 @@ export default new Router({
     ...homerouter,
     ...courserouter,
     ...personrouter,
-    ...loginrouter
+    ...loginrouter,
+    ...commonrouter
 
   ],
   scrollBehavior (to, from, savedPosition) {

@@ -65,23 +65,24 @@ export function getSplitTime (startTime, now, effectTime) {
   return str
 }
 // 微信设置title
-export default function setTitle (title) {
-  document.title = title
-  let userAgent = window.navigator.userAgent.toLowerCase()
-  let isiOS = userAgent.indexOf('applewebkit') >= 0
-  let isWechat = userAgent.indexOf('micromessenger') >= 0
-  if (isiOS && isWechat) {
-    let iframe = document.createElement('iframe')
-    iframe.src = 'https://www.baidu.com/favicon.ico'
-    iframe.style.display = 'none'
-    document.body.appendChild(iframe)
-    iframe.onload = function () {
-      setTimeout(function () {
-        iframe.remove()
-      }, 0)
-    }
+export function setWechatTitle (title) {
+  document.title = title;
+  let mobile = navigator.userAgent.toLowerCase();
+  if (/iphone|ipad|ipod/.test(mobile)) {
+      let iframe = document.createElement('iframe');
+      iframe.style.visibility = 'hidden';
+      // 替换成站标favicon路径或者任意存在的较小的图片即可
+      iframe.setAttribute('src', '//m.baidu.com/favicon.ico');
+      let iframeCallback = function() {
+          setTimeout(function() {
+              iframe.removeEventListener('load', iframeCallback)
+              document.body.removeChild(iframe)
+          }, 10)
+      };
+      iframe.addEventListener('load', iframeCallback)
+      document.body.appendChild(iframe)
   }
-}
+};
 // 转换成yy/mm/dd
 export function formattime (value) {
   var year = value.getFullYear()

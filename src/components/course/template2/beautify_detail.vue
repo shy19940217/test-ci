@@ -79,18 +79,11 @@ export default {
   watch: {},
   mounted () {},
   methods: {
-    ...mapMutations('course', ['updateTime', 'updateServicePerson', 'updateServiceStore', 'updateChooseDateObj', 'updatechoosePersonObj', 'updatechooseStoreObj']),
+    ...mapMutations('course', ['updateTime', 'updateServicePerson', 'updateServiceStore']),
     order () {
       this.updateTime('请选择预约时间')
       this.updateServicePerson('请选择服务人员')
       this.updateServiceStore('请选择服务门店')
-      let obj = {
-        active: null,
-        name: ''
-      }
-      this.updateChooseDateObj(obj)
-      this.updatechoosePersonObj(obj)
-      this.updatechooseStoreObj(obj)
       this.$router.push({
         path: '/beautify_order'
       })

@@ -6,9 +6,11 @@ const course = {
     time: '请选择预约时间',
     serviceStore: '请选择服务门店',
     servicePerson: '请选择服务人员',
+    serviceProject: '请选择服务项目',
     chooseDateObj: {
       active: null,
-      name: ''
+      name: '',
+      time: ''
     },
     choosePersonObj: {
       active: null,
@@ -17,24 +19,13 @@ const course = {
     chooseStoreObj: {
       active: null,
       name: ''
+    },
+    chooseProjectObj: {
+      active: null,
+      name: '请选择服务项目'
     }
-
   },
   mutations: {
-    // TOGGLE_SIDEBAR: state => {
-    //   if (state.sidebar.opened) {
-    //     Cookies.set('sidebarStatus', 1)
-    //   } else {
-    //     Cookies.set('sidebarStatus', 0)
-    //   }
-    //   state.sidebar.opened = !state.sidebar.opened
-    //   state.sidebar.withoutAnimation = false
-    // },
-    // CLOSE_SIDEBAR: (state, withoutAnimation) => {
-    //   Cookies.set('sidebarStatus', 1)
-    //   state.sidebar.opened = false
-    //   state.sidebar.withoutAnimation = withoutAnimation
-    // },
     updateChooseDateObj: (state, data) => {
       state.chooseDateObj = data
     },
@@ -44,8 +35,14 @@ const course = {
     updatechooseStoreObj: (state, data) => {
       state.chooseStoreObj = data
     },
+    updateChooseProjectObj: (state, data) => {
+      state.chooseProjectObj = data
+    },
     updateTime: (state, time) => {
       state.time = time
+    },
+    updateServiceProject: (state, data) => {
+      state.serviceProject = data
     },
     updateServicePerson: (state, data) => {
       state.servicePerson = data

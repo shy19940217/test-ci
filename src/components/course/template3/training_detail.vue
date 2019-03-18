@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import StarRate from 'vue-cute-rate'
 export default {
   name: '',
@@ -68,7 +69,10 @@ export default {
   watch: {},
   mounted () {},
   methods: {
+    ...mapMutations('course', ['updateTime', 'updateServiceProject']),
     confirm () {
+      this.updateTime('请选择预约时间')
+      this.updateServiceProject('请选择服务项目')
       this.$router.push({
         path: '/training_order'
       })
