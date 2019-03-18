@@ -1,7 +1,7 @@
 export default [
   {
     path: '/home',
-    name: '首页',
+    name: '西柚美学',
     component: resolve => require(['@/components/home/index'], resolve),
     meta: {
       title: '西柚美学',
@@ -11,7 +11,7 @@ export default [
   },
   {
     path: '/detail',
-    name: '首页',
+    name: '项目详情',
     component: resolve => require(['@/components/home/detail'], resolve),
     meta: {
       title: '项目详情'

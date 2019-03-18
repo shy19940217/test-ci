@@ -27,9 +27,9 @@ export default [
   },
   {
     path: '/teamlesson_detail',
-    name: '团课详情',
+    name: '确认预约',
     meta: {
-      title: '详情'
+      title: '确认预约'
     },
     component: resolve => require(['@/components/course/template1/teamlesson_detail'], resolve)
   },
@@ -51,7 +51,7 @@ export default [
   },
   {
     path: '/beautify_order',
-    name: 'beautify_order',
+    name: '美容服务预约',
     meta: {
       // keepAlive: true,
       isBack: false,

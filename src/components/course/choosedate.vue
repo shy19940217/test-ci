@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// import {setWechatTitle} from '@/js/util'
 import { mapState, mapMutations } from 'vuex'
 import { formattime } from '@/js/util'
 import choosedate from '@/common/choosedate'
@@ -52,6 +53,7 @@ export default {
     }
   },
   created () {
+    // setWechatTitle('选择日期')
     this.date = formattime(this.date)
   },
   computed: {

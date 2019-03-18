@@ -8,12 +8,12 @@ import store from './store'
 import base from './js/base.config'
 import attachFastClick from 'fastclick'
 
-import setTitle from '@/js/util'
+// import setTitle from '@/js/util'
 // import ajax1 from './js/Ajax/ajax.js'
 import 'lib-flexible/flexible'
 import toastRegistry from '@/common/toast/index'
 import { Toast } from 'vant' // 设置页面标题
-Vue.prototype.$setTitle = setTitle
+// Vue.prototype.$setTitle = setTitle
 
 Vue.use(Toast)
 Vue.use(toastRegistry)

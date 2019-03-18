@@ -1,7 +1,7 @@
 export default [
   {
     path: '/login',
-    name: '登录',
+    name: '绑定手机',
     component: resolve => require(['@/components/login/index'], resolve),
     meta: {
       title: '绑定手机'

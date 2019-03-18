@@ -34,7 +34,7 @@ export default [
   },
   {
     path: '/sendcode',
-    name: '',
+    name: '更换手机号',
     meta: {
       title: '更换手机号'
     },
@@ -42,7 +42,7 @@ export default [
   },
   {
     path: '/question',
-    name: '',
+    name: '常见问题',
     meta: {
       title: '常见问题'
     },
@@ -50,7 +50,7 @@ export default [
   },
   {
     path: '/banlance',
-    name: '',
+    name: '余额',
     meta: {
       title: '余额'
     },
@@ -58,7 +58,7 @@ export default [
   },
   {
     path: '/integration',
-    name: '',
+    name: '积分',
     meta: {
       title: '积分'
     },
@@ -78,7 +78,7 @@ export default [
   },
   {
     path: '/exchange',
-    name: '',
+    name: '积分兑换',
     meta: {
       title: '积分兑换'
     },
@@ -86,7 +86,7 @@ export default [
   },
   {
     path: '/coupon',
-    name: '',
+    name: '优惠券',
     meta: {
       title: '优惠券'
     },
@@ -94,7 +94,7 @@ export default [
   },
   {
     path: '/invite',
-    name: '',
+    name: '邀请有礼',
     meta: {
       title: '邀请有礼'
     },

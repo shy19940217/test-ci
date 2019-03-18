@@ -7,8 +7,8 @@
 6 silly lifecycle lmcf@1.0.0~prelint: no script for prelint, continuing
 7 info lifecycle lmcf@1.0.0~lint: lmcf@1.0.0
 8 verbose lifecycle lmcf@1.0.0~lint: unsafe-perm in lifecycle true
-9 verbose lifecycle lmcf@1.0.0~lint: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/hongyushi/lskj/lmcf/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin
-10 verbose lifecycle lmcf@1.0.0~lint: CWD: /Users/hongyushi/lskj/lmcf
+9 verbose lifecycle lmcf@1.0.0~lint: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/hongyushi/vue-mb/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin
+10 verbose lifecycle lmcf@1.0.0~lint: CWD: /Users/hongyushi/vue-mb
 11 silly lifecycle lmcf@1.0.0~lint: Args: [ '-c', 'eslint --fix --ext .js,.vue src test/unit' ]
 12 silly lifecycle lmcf@1.0.0~lint: Returned: code: 1  signal: null
 13 info lifecycle lmcf@1.0.0~lint: Failed to exec lint script
@@ -21,7 +21,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:936:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
 15 verbose pkgid lmcf@1.0.0
-16 verbose cwd /Users/hongyushi/lskj/lmcf
+16 verbose cwd /Users/hongyushi/vue-mb
 17 error Darwin 17.7.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "lint"
 19 error node v9.10.1
