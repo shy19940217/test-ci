@@ -4,7 +4,7 @@ export default [
     name: '课程服务',
     component: resolve => require(['@/components/course/index'], resolve),
     meta: {
-      keepAlive: true,
+      // keepAlive: true,
       title: '课程服务'
     },
     children: [

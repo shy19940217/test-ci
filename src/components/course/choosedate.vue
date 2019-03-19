@@ -1,7 +1,7 @@
 <template>
   <div class="choosedate">
     <div class='date'>
-        <choosedate @onchange="changedate"></choosedate>
+        <choosedate @onchange="changedate" :border="true"></choosedate>
     </div>
      <div class="timequantum">
         <div class="item" v-for="(item,index) in timelist" :key="index" v-bind:class="[index==active ? 'active' : '', item.disabled ? 'disabled':'']"  @click="!item.disabled&&checktab(item,index)">

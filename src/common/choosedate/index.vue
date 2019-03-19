@@ -1,10 +1,11 @@
 <template>
 <div>
     <div class="days">
-      <div @click="pick(day,index)" v-for="(day, index) in days" :key="index" :class="index==active ? 'checkedday':'day'">
+      <div @click="pick(day,index)" class="day_item" v-for="(day, index) in days" :key="index" :class="index==active ? 'checkedday':'day'">
       <span class="date">{{ day | flitertime }}</span>
       <span class="week">{{ day | filterweek }}</span>
       <span class="lesson" v-if="day.lesson">{{day.lesson}}</span>
+      <div class="line" v-if="(index==active)&&border"></div>
       </div>
     </div>
 </div>
@@ -52,6 +53,13 @@ export default {
   },
   created () {
     this.initData()
+    console.log(this.border)
+  },
+  props: {
+    border: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {},
   watch: {},
@@ -103,12 +111,14 @@ export default {
         flex-direction: row;
         overflow-x: scroll;
         .day{
+            padding-top: 15px;
+            padding-bottom: 3px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width:75px;
-            height:100px;
+            // height:100px;
             // padding: 0 40px;
             // border: 1px solid black;
 
@@ -134,12 +144,14 @@ export default {
             }
         }
         .checkedday{
+            padding-top: 15px;
+            padding-bottom: 3px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 75px;
-            height:100px;
+            // height:100px;
             .date{
                 width: 60px;
                 font-size: 12px;
@@ -160,6 +172,18 @@ export default {
                 color: #FF0014;
                 text-align: center;
             }
+        }
+        .day_item{
+          position: relative;
+          .line{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: #FF0014;
+          }
         }
     }
 </style>
